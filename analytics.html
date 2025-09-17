@@ -1,0 +1,17 @@
+{% extends "portfolio/base.html "%}
+{% block content %}
+<section class="section container">
+    <h2>Analytics (last 30 days)</h2>
+    <div class="card">
+        <p>Total pages views (30d): {{ total }}</p>
+        <table class="table">
+            <thead><tr><th>Path</th><th>Views</th></tr></thead>
+            <tbody>
+                {% for row in top %}
+                <tr><td>{{ row.path }}</td><td>{{ row.count }}</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

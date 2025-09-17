@@ -1,0 +1,370 @@
+/* style.css
+Palette:
+--accent: teal #008080
+--accent-deep: #00706e
+--bg: light neutral #f9f9f9
+--text-dark: #222
+--text-muted: #555 
+ */
+
+ :root{
+    --accent: #008080;
+    --accent-deep: #00706e;
+    --bg: #f9f9f9;
+    --text-dark: #222;
+    --text-muted: #555; 
+ }
+
+
+/* Base */
+*{
+    box-sizing: border-box}
+
+html,body{
+    height: 100%; margin: 0; font-family: "Open Sans", Arial, sans-serif;
+    background: var(--bg); color:var(--text-dark); -webkit-font-smoothing:antialiased}
+
+body::before{
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: url("images/pexels-merlin-11280357.jpg") no-repeat center center fixed;
+    background-size: cover; opacity: 0.50;}
+
+.content-wrapper{
+    position: relative; z-index: 1;}
+
+.container{
+    max-width: 1100px; margin: 0 auto; padding: 28px}
+
+
+/* Fixed Navbar */
+.nav-fixed{
+    position: fixed; top: 0; left: 0; right: 0; background:#073737; color: white;
+    box-shadow: 0 6px 20px rgba(7, 55, 55, 0.12); z-index: 50;}
+
+.nav-inner{
+    display: flex; align-items: center; justify-content: space-between; padding: 12px 28px;}
+
+.brand{
+    font-weight: 700; font-size: 20px; color: white; text-decoration: none;}
+
+.nav-links a{
+    color: inherit; text-decoration: none; margin-left: 18px; font-weight: 600; opacity: 0.95;}
+
+.nav-links a:hover{
+    opacity: 1; color: var(--accent);}
+
+
+/* Page spacing to all for fixed nav */
+main{padding: 84px 10px 0 10px; }
+
+
+/* Hero portfolio\static\portfolio\images\avatar.jpg*/
+.hero{
+    height: 72vh; background-image: url("images/Hero.png"); background-size:cover;
+    background-position: center; display: flex; align-items: center; justify-content: center; 
+    position: relative}
+
+.hero-overlay{
+    width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25));
+    display: flex; align-items: center;}
+
+.hero-inner{
+    display: flex; align-items: center; gap: 48px; padding: 40px;}
+
+.hero-content{
+    max-width: 640px; color: rgba(255,255,255,0.92); margin: 13px;}
+
+.hero h1{
+    font-size: 48px; margin: 0 0 10px; font-weight: 700;}
+
+.accent{
+    color: var(--accent-deep);}
+
+.lead{
+    font-size:18px; color: rgba(255, 255, 255, 0.92); margin-bottom: 18px;}
+
+.cta .btn{
+    margin-right: 12px;}
+
+.hero .btn{
+    padding: 12px 18px; border-radius: 10px; border: none; font-weight: 700; cursor: pointer;}
+
+.btn-primary{
+    background: linear-gradient(90deg, var(--accent), var(--accent-deep)); color: white;
+    box-shadow: 0 8px 20px rgba(0,128,128,0.18);}
+
+.btn-outline{
+    background: transparent; border: 2px solid rgba(255, 255, 255, 0.9); color: white;}
+
+
+/* Sections & cards */
+.section{
+    padding: 48px 0;}
+
+.card{
+    padding: 22px; border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(7, 55, 55, 0.30);}
+
+.container.narrow{
+    max-width: 760px;}
+
+
+/* Skills grid */
+.skills-grid{
+    display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 18px;}
+
+@media(min-width:900px){.skills-grid{grid-template-columns: repeat(2,1fr)}}
+
+.card h3{margin-top: 0;}
+
+
+/* Carousel (projects) */
+.carousel{
+    display: flex; flex-direction: column; align-items: center; gap: 20px; 
+    position:relative; width: 100%; max-width: 1000px; margin: 2rem auto; overflow: hidden}
+
+.carousel-track{
+    display: flex; width: 100%; flex: 1; transition: transform 0.45s ease; gap: 20px;}
+
+.project-card{
+    padding: 1.5rem; border-radius: 12px; box-sizing: border-box; text-align: center;  
+    border: 1px solid rgba(0, 128, 128, 0.1);
+    box-shadow: 0 12px 32px rgba(7, 55, 55, 0.15),
+                0 4px 12px rgba(0, 128, 128, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8); 
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    flex: 0 0 calc(33.333% - 14px); min-width: 0; gap: 1rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(0) scale(1); opacity: 1; z-index: 1;}
+
+.project-card img{
+    width: 50px; height: 50px; border-radius: 12px; object-fit: cover;
+    border: 3px solid rgba(0, 128, 128, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 128, 128, 0.15);
+    transition: all 03s ease;
+}
+
+.project-card h3{
+    font-size: 1.2rem; font-weight: 700; color: var(--accent-deep); margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); letter-spacing: -0.02em;}
+
+.project-card p{
+    font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); margin: 0; max-width: 90%;}
+
+.project-card .link{
+    display: inline-block; padding: 0.8rem 1.8rem; 
+    background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    color: white; text-decoration: none; border-radius: 25px; font-weight: 600;
+    font-size: 0.95rem; transition: all 0.3s ease; box-shadow: 0 6px 16px rgba(0, 128, 128, 0.25);
+    position: relative; overflow: hidden;}
+
+.project-card .link::before{
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;}
+
+.project-card:hover{
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 20px 48px rgba(7, 55, 55, 0.25),
+                0 8px 20px rgba(0, 128, 128, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 128, 128, 0.3);}
+
+.project-card:hover img{
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 12px 28px rgba(0, 128, 128, 0.25);
+    border-color: rgba(0, 128, 128, 0.2);
+}
+
+.project-card:hover .link{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 128, 128, 0.35);
+}
+
+.project-card:hover .link ::before{
+    left: 100%;}
+
+.project-card:hover h3{
+    color: var(--accent); text-shadow: 0 4px 8px rgba(0, 128, 128, 0.15);}
+
+.project-card .link:active{
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);}
+
+.project-card .link:focus{
+    outline: 2px solid var(--accent); outline-offset: 2px;}
+
+.project-card:has(h3:contains("Coming soon")){
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+    border: 2px dashed rgba(0, 128, 128, 0.2);
+}
+
+.project-card:has(h3:contains("Coming soon")) h3{
+    color: var(--text-muted); font-size: 1.8rem;}
+
+.project-card:has(h3:contains("Coming soon")) p{
+    font-style: italic; color: var(--text-muted);}
+
+@keyframes pulse {
+    0% { opacity: 0.8; transform: scale(1);}
+    50% { opacity: 1; transform: scale(1.02);}
+    100%{ opacity: 0.8; transform: (1);}
+}
+
+.project-card:has(h3:contains("Coming soon")){
+    animation: pulse 3s ease-in-out infinite;}
+
+@media (max-width: 768px){
+    .project-card{
+        padding: 2rem 1.5rem;
+        gap: 1rem;}
+
+    .project-card img{
+        width: 60px; height: 60px;}
+
+    .project-card h3{
+        font-size: 1.3rem;}
+    
+    .project-card p{
+        font-size: 0.95rem;}
+}
+
+.carousel-navigation{
+    display: flex; justify-content: center; gap: 15px; width: 100%; margin-top: 10px;}
+
+.carousel-btn{
+    background: #fff; border: 1px solid rgba(0, 0, 0, 0.50); padding: 0.8rem 1.5rem; max-width: 100px;
+    border-radius: 8px; cursor: pointer; z-index: 10; transition: background 0.3s ease, color 0.3s ease;}
+
+.carousel-btn:hover{
+    background: #008080; color: #fff;}
+
+
+/* Contact Form */
+
+label {
+    display: block; font-weight: 600; margin-bottom: 6px;}
+
+input[type="text"], input[type="email"], textarea{
+    width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #e6e6e6;
+    margin-bottom: 12px; outline: none;}
+
+input:focus, textarea:focus{
+    box-shadow: 0 6px 18px rgba(0, 128, 128, 0.08); border-color: var(--accent-deep);}
+
+.form-actions{
+    display: flex; gap: 12px; align-items: center;}
+
+.muted{
+    color: var(--text-muted);}
+
+
+/* Table (analytics) */
+
+.table{
+    width: 100%; border-collapse: collapse; margin-top: 12px;}
+
+.table th, .table td{
+    padding: 8px; border-bottom: 1px solid #eee; text-align: left;}
+
+
+/* Footer */
+.site-footer{
+    background: #072323; color: white; padding: 18px;
+    position: relative; z-index: 2;}
+
+.site-footer a{
+    color: rgba(255, 255, 255, 0.9);}
+
+/* Mobile responsive improvments */
+
+/* Base mobile styles */
+@media(max-width: 768px) {
+    .container{
+        padding: 15px;}
+
+    main{
+        padding: 70px 5px 0 5px;}
+
+    /* Navigation - hamburger menu for mobile */
+    .nav-links{
+        display: none; position: absolute; top: 100%; right: 0;
+        flex-direction: column; padding: 15px;}
+
+    .nav-links.active {
+        display: flex; background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25));
+        align-items: flex-end; flex-wrap: nowrap; width: 100px;}
+
+    .nav-links a {
+        margin: 10px 0;  border-bottom: 1px solid rgba(255, 255, 255, 0.1);}
+
+    /* Mobile menu toggle button */
+
+    .menu-toggle{
+        display:flex; background: none; border: none; color: white; font-size: 24px;
+        cursor: pointer;}
+
+    /* Hero section adjustment */
+    .hero{
+        height: auto; min-height: 60vh; align-items: flex-end;}
+
+    .hero-inner{
+        flex-direction: column; gap: 25px; padding: 20px; text-align: left;}
+
+    .hero h1{
+        font-size: 32px;}
+
+    .lead{
+        font-size: 16px;}
+
+    .cta{
+        display: flex; flex-direction: column; gap: 10px;}
+
+    .cta .btn{
+        margin-left: 0; width: 100%;}
+
+    /* Section spacing */
+    .section{
+        padding: 30px 0;}
+
+    /* Project carousel - stack vertically on mobile */
+    .carousel-track{
+        gap: 15px;}
+
+    .project-card{
+        flex: 0 0 auto; width: 100%;}
+
+    /* Skills grid - single colum on mobile */
+    .skills-grid{
+        grid-template-columns: 1fr;}
+
+    .form-actions{
+        flex-direction: column; align-items: stretch;}
+
+    /* Table adjustments */
+    .table-container{
+        overflow-x: auto;}
+
+    .table{
+        min-width: 500px;}
+}
+
+/* Tablet styles */
+@media(min-width: 769px) and (max-width: 1024px){
+    .project-card{
+        flex: 0 0 calc(50% - 10px);}
+
+    .menu-toggle{
+        display: none;}
+}
+
+/* Desktop styles - hide menu toggle */
+@media(min-width: 1025px){
+    .menu-toggle{
+        display: none;}
+}
+
+/* Touch-friendly button improvements */
+.btn, .carousel-btn, .project-card .link{
+    min-height: 44px; display: inline-flex; align-items: center; justify-content: center;}
+

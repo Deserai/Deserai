@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deserai's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- favicon -->
+    <link rel="icon" sizes="192x192" type="image/png"
+    href="images/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" type="image/png"
+    href="images/android-chrome-512x512.png">
+    <link rel="icon" type="image/png"
+    href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="16x16" type="image/png"
+    href="images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png"
+    href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png"
+    href="images/favicon.ico">
+
+</head>
+<body>
+    <header class="nav-fixed">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">Deserai</a>
+            <nav class="nav-links">
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <!-- <a href="{% url 'resume' %}">Résumé</a> -->
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-wrapper">
+            <section class="section container">
+                <h2>Projects</h2>
+                <div class="carousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        <article class="project-card">
+                            <img src="images/ms-icon-70x70.png" 
+                            alt="Barter or Buy">
+                            <h3>Barter or Buy</h3>
+                            <p>Creates an alternate market for bartering produce. Django backend, 
+                                server templates, Render deployment.</p>
+                            <p class="stack"><strong>Stack:</strong>Django - Python - 
+                                Javascript - HTML/CSS</p>
+                            <a href="https://barter-or-buy.onrender.com" target="_blank" 
+                            class="link">Open Project</a>
+                        </article>
+
+                        <article class="project-card">
+                            <h3>&#128295; Coming soon</h3>
+                            <p>Stayed tuned</p>
+                        </article>
+
+                        <article class="project-card">
+                            <h3>&#128295; Coming soon</h3>
+                            <p>Stayed tuned</p>
+                        </article>
+                    </div>
+
+                    <div class="carousel-navigation"> 
+                        <button id="prev" class="carousel-btn">&#x2190;</button>
+                        <button id="next" class="carousel-btn">&#x2192;</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div>&copy 2025 Deserai</div> 
+            <!-- change the above hard code to js -->
+            <div><a href="https://github.com/Deserai" target="_blank">Github</a></div>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>

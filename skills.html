@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deserai's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- favicon -->
+    <link rel="icon" sizes="192x192" type="image/png"
+    href="images/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" type="image/png"
+    href="images/android-chrome-512x512.png">
+    <link rel="icon" type="image/png"
+    href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="16x16" type="image/png"
+    href="images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png"
+    href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png"
+    href="images/favicon.ico">
+
+</head>
+<body>
+    <header class="nav-fixed">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">Deserai</a>
+            <nav class="nav-links">
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <!-- <a href="{% url 'resume' %}">Résumé</a> -->
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-wrapper">
+            <section class="section container">
+                <h2>Skills & Technologies</h2>
+                <div class="grid skills-grid">
+                    <div class="card">
+                        <h3>Languages & Frameworks</h3>
+                        <ul>
+                            <li>Python (Django)</li>
+                            <li>Javascript (vanilla)</li>
+                            <li>HTML5 & CSS3</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Dev Tools</h3>
+                        <ul>
+                            <li>Git & Github</li>
+                            <li>Deployment</li>
+                            <li>Debugging & Unit Tests</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Datastores & Hosting</h3>
+                        <ul>
+                            <li>Relational DBs (Postgres patterns & SQLite)</li>
+                            <li>Staticfiles & Media</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>UX & Product</h3>
+                        <ul>
+                            <li>Responsive UI</li>
+                            <li>Forms & input validation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div>&copy 2025 Deserai</div> 
+            <!-- change the above hard code to js -->
+            <div><a href="https://github.com/Deserai" target="_blank">Github</a></div>
+        </div>
+    </footer>
+
+        <script src="portfolio.js"></script>
+    </body>
+</html>
